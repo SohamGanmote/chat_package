@@ -1,0 +1,14 @@
+.chatForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.chatForm input {
+  width: 80%;
+  padding: 5px 10px;
+}
+.chatForm button {
+  width: 20%;
+  padding: 5px 10px;
+}

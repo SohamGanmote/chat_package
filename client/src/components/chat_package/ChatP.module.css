@@ -1,0 +1,7 @@
+.ChatP {
+  position: fixed;
+  top: 90%;
+  left: 95%;
+  transform: translate(-90%, -90%);
+  width: 80px;
+}

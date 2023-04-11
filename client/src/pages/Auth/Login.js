@@ -10,8 +10,28 @@ const Login = () => {
   const passOnChangeHandler = (e) => setPass(e.target.value);
   const submitHandler = () => {
     if (email !== "" && pass !== "") {
-      console.log(email);
-      console.log(pass);
+      fetch(`http://localhost:8080/api/auth/login`, {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          pass: pass,
+        }),
+      })
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {
+          if (data.length === 0) {
+            setError("Something Went Wrong");
+          } else {
+            localStorage.setItem("userEmail", email);
+            redirect("/");
+          }
+        });
       setEmail("");
       setPass("");
       setError("");

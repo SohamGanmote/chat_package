@@ -1,0 +1,17 @@
+.chats {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 400px;
+}
+.sender {
+  margin: 15px;
+  text-align: right;
+}
+.reciver {
+  margin: 15px;
+}
+.reciver span,
+.sender span {
+  padding: 3px 10px;
+  border: 1px solid black;
+}

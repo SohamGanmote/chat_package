@@ -12,9 +12,25 @@ const SignUp = () => {
   const passOnChangeHandler = (e) => setPass(e.target.value);
   const submitHandler = () => {
     if (name !== "" && email !== "" && pass !== "") {
-      console.log(name);
-      console.log(email);
-      console.log(pass);
+      fetch(`http://localhost:8080/api/auth/signup`, {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          pass: pass,
+        }),
+      })
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {
+          localStorage.setItem("userEmail", email);
+          redirect("/");
+        });
       setName("");
       setEmail("");
       setPass("");

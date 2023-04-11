@@ -6,6 +6,7 @@ import Login from "./pages/Auth/Login";
 import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Home/HomePage";
 import Root from "./pages/Root";
+import Admin from "./pages/Admin/Admin";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,13 @@ function App() {
     {
       path: "/",
       element: <Root />,
-      children: [{ index: true, element: <Home /> }],
+      children: [
+        { index: true, element: <Home /> },
+        {
+          path: "/admin",
+          element: <Admin />,
+        },
+      ],
     },
   ]);
   return (

@@ -1,0 +1,18 @@
+.Chat {
+  position: fixed;
+  top: 60%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
+.hedder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+.hedder h3,
+.hedder button {
+  margin: 5px 10px;
+}
