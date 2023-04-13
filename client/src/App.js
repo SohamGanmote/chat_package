@@ -7,6 +7,7 @@ import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Home/HomePage";
 import Root from "./pages/Root";
 import Admin from "./pages/Admin/Admin";
+import AdminChats from "./pages/Admin/AdminChats";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
         {
           path: "/admin",
           element: <Admin />,
+        },
+        {
+          path: "chats/:sender/:reciver",
+          element: <AdminChats url="http://localhost:8080" />,
         },
       ],
     },

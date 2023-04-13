@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import style from "./RenderChats.module.css";
 import io from "socket.io-client";
 
+const socket = io.connect("http://localhost:8080");
 const RenderChats = (props) => {
-  const socket = io.connect(props.url);
   const [chats, setChats] = useState([]);
   useEffect(() => {
     const retriveChats = () => {
@@ -23,9 +23,16 @@ const RenderChats = (props) => {
     };
     retriveChats();
   }, [props.user]);
-  socket.off("ReceiveMessage").on("ReceiveMessage", (data) => {
+  socket.on("ReceiveMessage", (data) => {
     if (data.sender === props.user) {
       setChats([...chats, data]);
+    } else {
+      if (
+        data.reciver === props.user &&
+        data.sender === "sohamganmote@gmail.com"
+      ) {
+        setChats([...chats, data]);
+      }
     }
   });
   return (

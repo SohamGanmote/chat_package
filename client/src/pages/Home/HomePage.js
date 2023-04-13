@@ -12,7 +12,9 @@ const HomePage = () => {
   return (
     <div>
       <button onClick={() => redirect("/admin")}>ShowChats</button>
-      <ChatP username={currentUser} url="http://localhost:8080" />
+      {currentUser !== "sohamganmote@gmail.com" && (
+        <ChatP username={currentUser} url="http://localhost:8080" />
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   height: 400px;
+  overflow: scroll;
 }
 .sender {
   margin: 15px;
