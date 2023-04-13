@@ -20,7 +20,7 @@ const socket = (server) => {
             );
           } else {
             connection.query(
-              `UPDATE conversetions SET lastMessage="${data.message}"  WHERE userName="${data.sender}";`
+              `UPDATE conversetions SET lastMessage="${data.message}" WHERE userName="${data.sender}";`
             );
           }
         }

@@ -14,3 +14,8 @@ CREATE TABLE chats (
    reciver varchar(55),
    message varchar(255)
 );
+
+CREATE TABLE conversetions (
+   userName varchar(55),
+   lastMessage varchar(255)
+);
