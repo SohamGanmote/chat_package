@@ -23,6 +23,7 @@ const ChatForm = (props) => {
         value={message}
         onChange={messageOnChangeHandler}
         maxLength="200"
+        required
       />
       <button onClick={newMessageHandler}>Send</button>
     </form>
